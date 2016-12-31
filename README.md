@@ -2,6 +2,10 @@
 
 Restack is a (currently in the "still playing around" stage) Haskell interface to the [Stacks project](https://github.com/stacks/stacks-project).
 
+The API is documented [here](http://stacks.math.columbia.edu/api).
+
+## Example
+
 As of now, here is what can be done:
 
 ```latex
