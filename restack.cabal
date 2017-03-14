@@ -25,4 +25,4 @@ executable restack
                      , bytestring
                      , filepath
                      , readline
-  default-extensions:  OverloadedStrings
+                     , megaparsec
