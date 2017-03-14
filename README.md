@@ -2,7 +2,7 @@
 
 Restack is a (currently in the "still playing around" stage) Haskell interface to the [Stacks project](https://github.com/stacks/stacks-project).
 
-The API is documented [here](http://stacks.math.columbia.edu/api).
+It uses the Stacks Project API, which is documented [here](http://stacks.math.columbia.edu/api).
 
 ## Example
 
@@ -40,15 +40,15 @@ Algebraic Stacks, Lemma \ref{algebraic-lemma-2-fibre-product}.
     
 # Overview
 
-Tags are stored in an `RTag` record type. There are four forms in which the data of a tag can be retrieved, based on two choices:
+Tags are stored in an `RTag` record type. One can retrieve the data of a tag by providing:
 
-* `Format`: whether the response format should be LaTeX or HTML
-* `ProofType`: whether or not the response should include the proof of the statement in the tag
+* a `Format`: the response format, either `LaTeX` or `HTML`
+* a `ProofType`: whether or not the response should include the proof of the statement in the tag
 
-This goes in a `ReqType` datatype. Based on this, we have the function
+This goes in a `ReqType` datatype, which represents the data of an API call. Based on this, we have the function
 
 ```haskell
 fetchTagId :: RTagId -> ReqType -> IO Text
 ```
 
-(where `RTagId` is a type synonym for `Text`) which returns the body of the response using `get` from `Network.Wreq`.
+which performs an API call and returns the body of the response. 
