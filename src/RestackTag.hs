@@ -34,12 +34,12 @@ mkTag :: RTagId -> RTag
 mkTag i = RTag i ""
 
 fetchTag :: RTag -> ReqType -> IO Text
-fetchTag tag req = resp >>= return . decodeUtf8 . (^. responseBody)
+fetchTag tag req = decodeUtf8 . (^. responseBody) <$> resp
   where
     resp = get . T.unpack $ requestUrl tag req
 
 fetchTagId :: RTagId -> ReqType -> IO Text
-fetchTagId tid = fetchTag (mkTag tid)
+fetchTagId = fetchTag . mkTag
 
 requestUrl :: RTag -> ReqType -> Text
 requestUrl tag (ReqType f p) =
