@@ -53,6 +53,12 @@ fetchTagId :: RTagId -> ReqType -> IO Text
 
 which performs an API call and returns the body of the response. 
 
-# Licensing
+# TODO
+
+* `RTagId` is currently defined as a type synonym for `Text`. It would be beneficial to perform some validation on the tag ID before making the API call: for instance,
+    * parsing the input to ensure it conforms to the [tag grammar](http://stacks.math.columbia.edu/tags)
+    * looking the tag up in the official [tags file](https://github.com/stacks/stacks-project/blob/master/tags/tags)
+
+# License
 
 All code in this repo is licensed MIT.
