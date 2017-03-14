@@ -52,3 +52,7 @@ fetchTagId :: RTagId -> ReqType -> IO Text
 ```
 
 which performs an API call and returns the body of the response. 
+
+# Licensing
+
+All code in this repo is licensed MIT.
